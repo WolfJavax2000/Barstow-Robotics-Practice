@@ -23,7 +23,7 @@ public class MecanumEXDriveTrain extends OpMode {
         rotation = gamepad1.right_stick_x;
 
 
-        // TODO: Work on motor power logic and understanding above
+        // TODO: Work on motor power logic understanding above
 
     }
 
