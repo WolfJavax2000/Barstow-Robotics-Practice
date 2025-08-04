@@ -22,7 +22,8 @@ public class MecanumEXDriveTrain extends OpMode {
         vertical = gamepad1.left_stick_y;
         rotation = gamepad1.right_stick_x;
 
-        RFMotor.setPower();
+
+        // TODO: Work on motor power logic and understanding above
 
     }
 
