@@ -11,7 +11,6 @@ public class telementaryTest extends OpMode {
     @Override
     public void init() {
         telemetry.addData("Hardware:", "Has Been Initialized");
-
     }
 
     @Override

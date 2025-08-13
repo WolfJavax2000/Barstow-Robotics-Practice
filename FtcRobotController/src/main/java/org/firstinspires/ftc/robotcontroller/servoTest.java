@@ -44,7 +44,7 @@ public class servoTest extends OpMode {
 
         }
         if (servoCounter == 2) {
-            // if Button Y is pressed, set servo pos 0.5;
+            // if Button Y is pressed, set servo pos 1.0;
             servo.setPosition(1.0);
             telemetry.addData("Button Y Servo Position:", servo.getPosition());
 

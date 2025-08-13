@@ -2,7 +2,7 @@ package org.firstinspires.ftc.robotcontroller;
 import com.qualcomm.robotcore.eventloop.opmode.OpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 import com.qualcomm.robotcore.hardware.DcMotor;
-
+import com.qualcomm.robotcore.hardware.DcMotorSimple;
 
 @TeleOp
 public class MecanumEXDriveTrain extends OpMode {
@@ -19,11 +19,14 @@ public class MecanumEXDriveTrain extends OpMode {
         double rotation;
 
         horizontal = gamepad1.left_stick_x;
-        vertical = gamepad1.left_stick_y;
+        vertical = -gamepad1.left_stick_y;
         rotation = gamepad1.right_stick_x;
 
-
-        // TODO: Work on motor power logic understanding above
+        RFMotor.setPower(rotation + (-vertical + horizontal));
+        LFMotor.setPower(rotation + (-vertical - horizontal));
+        RBMotor.setPower(rotation + (-vertical - horizontal));
+        LBMotor.setPower(rotation + (-vertical + horizontal));
+        // TODO: Work on motor power logic understanding above and make sure the right motor is flipped
 
     }
 
@@ -34,7 +37,7 @@ public class MecanumEXDriveTrain extends OpMode {
         RBMotor = hardwareMap.get(DcMotor.class, "RBMotor");
         LBMotor = hardwareMap.get(DcMotor.class, "LBMotor");
 
-
+        RFMotor.setDirection(DcMotorSimple.Direction.REVERSE);
     }
 
     @Override
